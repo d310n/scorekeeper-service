@@ -1,7 +1,7 @@
 package org.controller;
 
 import org.model.Player;
-import org.service.IPlayerService;
+import org.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class PlayerController
 {
 
     @Autowired
-    IPlayerService playerService;
+    PlayerService playerService;
 
     @GetMapping("/players")
     public ResponseEntity<List<Player>> getAllPlayers() {

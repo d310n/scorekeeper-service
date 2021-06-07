@@ -1,7 +1,7 @@
 package org.controller;
 
 import org.model.Team;
-import org.service.ITeamService;
+import org.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class TeamController
 {
 
     @Autowired
-    ITeamService teamService;
+    TeamService teamService;
 
     @GetMapping("/teams")
     public ResponseEntity<List<Team>> getAllTeams()
