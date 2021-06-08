@@ -21,7 +21,6 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class PlayerController
 {
-
     @Autowired
     PlayerService playerService;
 

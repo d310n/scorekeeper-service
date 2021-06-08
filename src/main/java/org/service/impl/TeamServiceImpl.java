@@ -41,7 +41,4 @@ public class TeamServiceImpl implements TeamService
             teamRepository.delete((Team) get(id).get());
         }
     }
-
-
-
 }

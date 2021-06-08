@@ -14,5 +14,4 @@ public interface PlayerService
     Optional get(int id);
 
     void delete(int id);
-
 }
