@@ -5,11 +5,12 @@ import java.util.Optional;
 
 import org.model.Team;
 import org.repository.TeamRepository;
+import org.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TeamServiceImpl implements TeamRepository
+public class TeamServiceImpl implements TeamService
 {
     @Autowired
     TeamRepository teamRepository;
