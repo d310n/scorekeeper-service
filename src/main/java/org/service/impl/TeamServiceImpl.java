@@ -38,7 +38,7 @@ public class TeamServiceImpl implements TeamService
     {
         if (get(id).isPresent())
         {
-            teamRepository.delete(get(id).get());
+            teamRepository.delete((Team) get(id).get());
         }
     }
 

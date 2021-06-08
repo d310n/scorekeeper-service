@@ -38,7 +38,7 @@ public class PlayerServiceImpl implements PlayerService {
     {
         if (get(id).isPresent())
         {
-            playerRepository.delete(get(id).get());
+            playerRepository.delete((Player) get(id).get());
         }
     }
 }
