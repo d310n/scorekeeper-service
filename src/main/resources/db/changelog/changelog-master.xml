@@ -16,7 +16,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="deion" id="2" >
+    <changeSet author="deion" id="1" >
         <createTable tableName="team">
             <column name="id" type="int"/>
             <column name="teamname" type="varchar(45)"/>
