@@ -1,4 +1,4 @@
-package org.model;
+package com.scorekeeper.model;
 
 import javax.persistence.*;
 

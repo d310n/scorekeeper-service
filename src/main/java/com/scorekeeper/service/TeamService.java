@@ -1,6 +1,6 @@
-package org.service;
+package com.scorekeeper.service;
 
-import org.model.Team;
+import com.scorekeeper.model.Team;
 
 import java.util.List;
 import java.util.Optional;

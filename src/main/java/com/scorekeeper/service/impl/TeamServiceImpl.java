@@ -1,11 +1,11 @@
-package org.service.impl;
+package com.scorekeeper.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.model.Team;
-import org.repository.TeamRepository;
-import org.service.TeamService;
+import com.scorekeeper.model.Team;
+import com.scorekeeper.repository.TeamRepository;
+import com.scorekeeper.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

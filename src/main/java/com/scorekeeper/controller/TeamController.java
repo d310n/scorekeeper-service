@@ -1,7 +1,7 @@
-package org.controller;
+package com.scorekeeper.controller;
 
-import org.model.Player;
-import org.service.PlayerService;
+import com.scorekeeper.model.Team;
+import com.scorekeeper.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,16 +19,17 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class PlayerController
+public class TeamController
 {
     @Autowired
-    PlayerService playerService;
+    TeamService teamService;
 
-    @GetMapping("/players")
-    public ResponseEntity<List<Player>> getAllPlayers() {
+    @GetMapping("/teams")
+    public ResponseEntity<List<Team>> getAllTeams()
+    {
         try
         {
-            List<Player> list = playerService.get();
+            List<Team> list = teamService.get();
 
             if (list.isEmpty() || list.size() == 0)
             {
@@ -43,24 +44,24 @@ public class PlayerController
         }
     }
 
-    @GetMapping("/players/{id}")
-    public ResponseEntity<Player> getPlayer(@PathVariable int id)
+    @GetMapping("/teams/{id}")
+    public ResponseEntity<Team> getTeam(@PathVariable int id)
     {
-        Optional<Player> player = playerService.get(id);
+        Optional<Team> team = teamService.get(id);
 
-        if (player.isPresent())
+        if (team.isPresent())
         {
-            return new ResponseEntity<Player>(player.get(), HttpStatus.OK);
+            return new ResponseEntity<Team>(team.get(), HttpStatus.OK);
         }
-        return new ResponseEntity<Player>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Team>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/players")
-    public ResponseEntity<Player> savePlayer(@RequestBody Player player)
+    @PostMapping("/teams")
+    public ResponseEntity<Team> saveTeam(@RequestBody Team team)
     {
         try
         {
-            return new ResponseEntity<Player>(playerService.add(player), HttpStatus.CREATED);
+            return new ResponseEntity<Team>(teamService.add(team), HttpStatus.CREATED);
         }
         catch (Exception e)
         {
@@ -68,25 +69,25 @@ public class PlayerController
         }
     }
 
-    @PutMapping("/players")
-    public ResponseEntity<Player> updatePlayer(@RequestBody Player player)
+    @PutMapping("/teams")
+    public ResponseEntity<Team> updateTeam(@RequestBody Team team)
     {
         try
         {
-            return new ResponseEntity<Player>(playerService.add(player), HttpStatus.OK);
+            return new ResponseEntity<Team>(teamService.add(team), HttpStatus.OK);
         }
         catch (Exception e)
         {
-            return new ResponseEntity<Player>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<Team>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @DeleteMapping("/players/{id}")
-    public ResponseEntity<HttpStatus> deletePlayer(@PathVariable int id)
+    @DeleteMapping("/teams/{id}")
+    public ResponseEntity<HttpStatus> deleteTeam(@PathVariable int id)
     {
         try
         {
-            playerService.delete(id);
+            teamService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         catch (Exception e)

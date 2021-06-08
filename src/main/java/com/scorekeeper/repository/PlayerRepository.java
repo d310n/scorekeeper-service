@@ -1,6 +1,6 @@
-package org.repository;
+package com.scorekeeper.repository;
 
-import org.model.Player;
+import com.scorekeeper.model.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PlayerRepository extends JpaRepository<Player, Integer>

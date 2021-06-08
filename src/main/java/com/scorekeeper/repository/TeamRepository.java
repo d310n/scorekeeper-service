@@ -1,6 +1,6 @@
-package org.repository;
+package com.scorekeeper.repository;
 
-import org.model.Team;
+import com.scorekeeper.model.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TeamRepository extends JpaRepository<Team, Integer>
