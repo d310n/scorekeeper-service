@@ -1,9 +1,13 @@
 package com.scorekeeper.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "team")
+@Table(name = "teams")
 public class Team
 {
     @Id
@@ -42,4 +46,8 @@ public class Team
     {
         this.teamState = teamState;
     }
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "teams")
+    @JsonBackReference
+    private List<Player> players = new ArrayList<>();
 }

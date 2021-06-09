@@ -3,7 +3,7 @@ package com.scorekeeper.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "player")
+@Table(name = "players")
 public class Player
 {
     @Id
@@ -13,6 +13,18 @@ public class Player
     private String firstName;
 
     private String lastName;
+
+    @JoinColumn(name = "TEAMS_ID")
+    @ManyToOne
+    private Team teams;
+
+    public Team getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Team teams) {
+        this.teams = teams;
+    }
 
     public Player()
     {
