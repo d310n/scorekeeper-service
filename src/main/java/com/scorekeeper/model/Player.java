@@ -14,7 +14,7 @@ public class Player
 
     private String lastName;
 
-    @JoinColumn(name = "TEAMS_ID")
+    @JoinColumn(name = "TEAMS_ID", nullable = false)
     @ManyToOne
     private Team teams;
 
