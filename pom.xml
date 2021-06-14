@@ -60,6 +60,12 @@
             <artifactId>logback-json-classic</artifactId>
             <version>${logback.contrib.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.2</version>
+            <scope>test</scope>
+        </dependency>
         <!-- JSON LOGBACK CONFIG -END -->
     </dependencies>
 
