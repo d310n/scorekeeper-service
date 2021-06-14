@@ -60,13 +60,17 @@
             <artifactId>logback-json-classic</artifactId>
             <version>${logback.contrib.version}</version>
         </dependency>
+        <!-- JSON LOGBACK CONFIG -END -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
-        <!-- JSON LOGBACK CONFIG -END -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
