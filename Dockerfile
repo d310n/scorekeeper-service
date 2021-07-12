@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM openjdk:13-jdk-alpine
+FROM openjdk:8-jdk-alpine
 
 # Add Maintainer Info
 LABEL maintainer="deiongarcia@gmail.com"
@@ -11,10 +11,10 @@ VOLUME /tmp
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=out/artifacts/scorekeeper_service_jar/scorekeeper_service.jar
+ARG JAR_FILE=target/scorekeeper-service-1.0-SNAPSHOT.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} scorekeeper-service.jar
 
 # Run the jar file
-ENTRYPOINT ["java","/scorekeeper-service.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/scorekeeper-service.jar"]

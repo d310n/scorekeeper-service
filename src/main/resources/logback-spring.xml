@@ -47,18 +47,18 @@
     <!-- LOG everything at INFO level -->
     <root level="info">
         <!--        <appender-ref ref="STDOUT" />-->
-        <!--        <appender-ref ref="CONSOLE" />-->
-        <appender-ref ref="DB" />
-        <appender-ref ref="STDOUT" />
+            <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="DB" />-->
+<!--        <appender-ref ref="STDOUT" />-->
 
 
     </root>
 
     <logger name="com.scorekeeper" level="trace" additivity="false">
         <!--        <appender-ref ref="STDOUT" />-->
-        <!--        <appender-ref ref="CONSOLE" />-->
-        <appender-ref ref="DB" />
-        <appender-ref ref="STDOUT" />
+            <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="DB" />-->
+<!--        <appender-ref ref="STDOUT" />-->
 
     </logger>
 
