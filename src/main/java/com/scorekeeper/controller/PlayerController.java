@@ -25,7 +25,8 @@ public class PlayerController
     PlayerService playerService;
 
     @GetMapping("/players")
-    public ResponseEntity<List<Player>> getAllPlayers() {
+    public ResponseEntity<List<Player>> getAllPlayers()
+    {
         try
         {
             List<Player> list = playerService.get();
